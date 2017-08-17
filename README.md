@@ -19,3 +19,4 @@
 
 ## Research
 - [Creating a Simple Bookmarklet](https://www.youtube.com/watch?v=K_A3Y3eqnzE)
+- [Using microdata (itemtype and itemprop)](http://schema.org/Product)

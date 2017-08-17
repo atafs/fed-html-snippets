@@ -5,9 +5,10 @@
     <title>Bookmarklet - Analise WebPage</title>
   </head>
   <body>
-    <h2>Drag this <a href="javascript:!function(){var%20t,e,n,o=[];t=document.getElementsByTagName(%22div%22),e=t[0].getElementsByTagName(%22*%22);for(var%20g=0;g%3Ce.length;g++)n={prop:e[g].getAttribute(%22itemprop%22),text:e[g].textContent},o.push(n);console.log(o)}();">bookmarklet</a> to your bookmarks bar!!</h2>
-
-    <h3>Data from the page:</h3>
+    <h2>Click and Drag in this <a href="javascript:!function(){var%20t,e,o,l,n=[];t=document.getElementsByTagName(%22div%22),e=t[0].getElementsByTagName(%22*%22);for(var%20r=0;r%3Ce.length;r++)o={prop:e[r].getAttribute(%22itemprop%22),text:e[r].textContent},n.push(o);console.log(n),l='%3Cdiv%20style=%22position:%20absolute;%20bottom:%200;%20right:%200;%20padding-bottom:%2015px;%20padding-right:%2015px;%22%3E%3Cbr/%3E%3Ch3%20style=%22color:%20crimson;%22%3EData%20from%20the%20bookmarklet:%3C/h3%3E%3Ctable%20align=right%20style=%22background:%20crimson;%20color:%20black;%22%3E%3Ctr%3E%3Cth%20align=left%3EItemProp%3C/th%3E%3Cth%20align=left%3EItemText%3C/th%3E%3C/tr%3E',n.map(function(t){l+='%3Ctr%20style=%22color:%20white;%22%3E',l+=%22%3Ctd%20align=left%3E%22+t.prop+%22%3C/td%3E%22,l+=%22%3Ctd%20align=left%3E%22+t.text+%22%3C/td%3E%22,l+=%22%3C/tr%3E%22}),l+=%22%3C/table%3E%3C/div%3E%22,console.log(l),document.getElementById(%22table%22).innerHTML=l}();">bookmarklet</a>
+      to your bookmarks bar!!
+    </h2>
+    <h3 >Data from the page:</h3>
     <ul>
       <div itemscope itemtype="http://schema.org/ItemList">
           <span itemprop="name">Americo</span>
@@ -32,22 +33,6 @@
           <a itemprop="url" href="https://www.google.co.uk/">https://www.google.co.uk/</a>
       </div>
     </ul>
-
-    <script type="text/javascript">
-      var divDOM, descendents, item;
-      var items = [];
-
-      divDOM = document.getElementsByTagName('div');
-      descendents = divDOM[0].getElementsByTagName('*');
-      for(var i = 0; i < descendents.length; i++) {
-        item = {
-          prop: descendents[i].getAttribute('itemprop'),
-          text: descendents[i].textContent
-        }
-        items.push(item);
-      }
-      console.log(items);
-    </script>
-
+    <div id="table"></div>
   </body>
 </html>
