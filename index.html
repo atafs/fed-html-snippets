@@ -34,5 +34,31 @@
       </div>
     </ul>
     <div id="table"></div>
+
+    <script type="text/javascript">
+      var divDOM, descendents, item, table;
+      var items = [];
+      divDOM = document.getElementsByTagName('div');
+      descendents = divDOM[0].getElementsByTagName('*');
+      for(var i = 0; i < descendents.length; i++) {
+        item = {
+          prop: descendents[i].getAttribute('itemprop'),
+          text: descendents[i].textContent
+        }
+        items.push(item);
+      }
+      console.log(items);
+      table = "<div style=\"position: absolute; bottom: 0; right: 0; padding-bottom: 15px; padding-right: 15px;\"><br/><h3 style=\"color: crimson;\">Data from the bookmarklet:</h3><table align=right style=\"background: crimson; color: black;\"><tr><th align=left>ItemProp</th><th align=left>ItemText</th></tr>";
+      items.map( function(item) {
+        table += "<tr style=\"color: white;\">";
+        table += "<td align=left>" + item.prop + "</td>";
+        table += "<td align=left>" + item.text + "</td>";
+        table += "</tr>";
+      });
+      table += "</table></div>";
+      console.log(table);
+      document.getElementById('table').innerHTML = table;
+    </script>
+
   </body>
 </html>
